@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Maio-2023 às 03:07
+-- Tempo de geração: 23-Maio-2023 às 03:16
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 7.4.33
 
@@ -18,39 +18,37 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `test`
+-- Banco de dados: `devsnotes`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura da tabela `notes`
 --
 
-CREATE TABLE `usuarios` (
+CREATE TABLE `notes` (
   `id` int(11) NOT NULL,
-  `nome` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_general_ci;
+  `title` varchar(100) NOT NULL,
+  `body` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Extraindo dados da tabela `notes`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `email`) VALUES
-(5, 'Aurelio Corcelli', 'aureliocorcelli@gmail.com'),
-(7, 'Antonio', 'eu@eu.com.br'),
-(8, 'hugo', 'hugo@hugo.com'),
-(9, 'Bia', 'bia@bia.com');
+INSERT INTO `notes` (`id`, `title`, `body`) VALUES
+(1, 'Testando', '123'),
+(3, 'Anotar uma coisa', 'alguma coisa legal');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `usuarios`
+-- Índices para tabela `notes`
 --
-ALTER TABLE `usuarios`
+ALTER TABLE `notes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -58,10 +56,10 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de tabela `usuarios`
+-- AUTO_INCREMENT de tabela `notes`
 --
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `notes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
